@@ -16,3 +16,11 @@ function calculate() {
     let y = document.getElementById("Y");
     y.innerText = generateFibo(x);
 }
+
+function genetorFibRecursive(n) {
+    if (x < 2) {
+        return 1;
+    } else {
+        return genetorFibRecursive(x - 2) + genetorFibRecursive(x - 1);
+    }
+}
