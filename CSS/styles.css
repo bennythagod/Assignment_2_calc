@@ -1,0 +1,25 @@
+.background {
+    background-color: #c7c7c7;
+}
+
+.tittleCalc {
+    color: #c7c7c7;
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 55px;
+    line-height: 79px;
+    display: flex;
+    align-items: flex-end;
+    padding: 15px;
+}
+
+.calc-wrapper {
+    background-color: #fffffb;
+    position: relative;
+    width: 1000px;
+    height: 400px;
+    margin: auto;
+    border-radius: 1%;
+    box-shadow: 6px 0px 18px rgba(255, 255, 255, 0.06);
+}
