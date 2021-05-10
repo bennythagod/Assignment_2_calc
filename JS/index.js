@@ -17,7 +17,7 @@ function calculate() {
     y.innerText = generateFibo(x);
 }
 
-function genetorFibRecursive(n) {
+function genetorFibRecursive(x) {
     if (x < 2) {
         return 1;
     } else {
