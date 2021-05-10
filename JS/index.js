@@ -1,28 +1,3 @@
-// function fibo() {
-//     let x = document.getElementById("X").value;
-//     document.getElementById("Y").innerHTML = x;
-//     console.log(x);
-// }
-
-// function calc(albert) {
-//     let result = 0;
-//     let current = 0;
-//     let prev = 1;
-//     let preprev = 0;
-//     for (i = 0; i < 50; i++) {
-//         current = prev + preprev;
-//         preprev = prev;
-//         prev = current;
-
-//     }
-
-// }
-
-let x = 5;
-let y = 3;
-let elem = document.getElementById("declaring");
-elem.innerText = "The Fibonacci of " + x + " is " + y + ".";
-
 function generateFibo(x) {
     let sequence = [];
 
@@ -34,3 +9,8 @@ function generateFibo(x) {
     }
     return sequence[x - 1]
 }
+
+let x = 5;
+let y = generateFibo(x);
+let elem = document.getElementById("declaring");
+elem.innerText = "The Fibonacci of " + x + " is " + y + ".";
