@@ -1,9 +1,10 @@
-.background {
-    background-color: #c7c7c7;
+body {
+    padding: 50px;
+    font-family: Open Sans;
 }
 
 .tittleCalc {
-    color: #c7c7c7;
+    color: black;
     font-family: Open Sans;
     font-style: normal;
     font-weight: normal;
@@ -11,7 +12,6 @@
     line-height: 79px;
     display: flex;
     align-items: flex-end;
-    padding: 15px;
 }
 
 .calc-wrapper {
@@ -22,4 +22,26 @@
     margin: auto;
     border-radius: 1%;
     box-shadow: 6px 0px 18px rgba(255, 255, 255, 0.06);
+}
+
+#X {
+    width: 86px;
+    height: 38px;
+    margin: 0 10px;
+}
+
+#child01 {
+    display: flex;
+    align-items: center;
+}
+
+.text {
+    font-weight: normal;
+    font-size: 24px;
+    margin: auto 0;
+}
+
+#Y {
+    margin: auto;
+    margin-left: 10px;
 }
