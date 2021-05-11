@@ -22,11 +22,11 @@ function generateFibo(x) {
 
     sequence[0] = 0;
     sequence[1] = 1;
-    for (let i = 2; i <= x; i++) {
+    for (let i = 2; i <= x + 1; i++) {
         sequence[i] = sequence[i - 2] + sequence[i - 1];
 
     }
-    return sequence[x]
+    return sequence[x + 1]
 }
 
 function fiboRequest(x) {
@@ -63,7 +63,6 @@ function fiboList() {
     $.get(url, {})
         .done(function(data) {
             loading2.style.display = "none";
-            console.log(data);
             for (let item of data.results) {
                 let elem = document.createElement("li")
                 elem.classList.add("list-group-item")
@@ -84,13 +83,18 @@ function fiboList() {
 fiboList();
 
 function calculate() {
+    let checkbox = document.getElementById("check");
     y.style.color = "black";
     y.innerText = "";
     y.style.textDecoration = "underline";
     y.style.fontWeight = "bold";
+    if (!checkbox.checked) {
+        y.innerText = generateFibo(Number(x.value))
+    } else {
 
-    loading.style.display = "inline";
+        loading.style.display = "inline";
 
-    fiboRequest(Number(x.value));
+        fiboRequest(Number(x.value));
+    }
 
 }
