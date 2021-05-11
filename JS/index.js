@@ -1,3 +1,20 @@
+let loading = document.getElementById("loading");
+let y = document.getElementById("Y");
+let x = document.getElementById("X");
+$("#X").change(
+    function() {
+        let alertMessage = document.getElementById("alert");
+        let button = document.getElementById("button");
+        if (Number(x.value) > 50) {
+            alertMessage.style.display = "inline";
+            button.setAttribute("disabled", "disabled");
+        } else {
+            alertMessage.style.display = "none";
+            button.removeAttribute("disabled");
+        }
+    }
+)
+
 function generateFibo(x) {
     let sequence = [];
 
@@ -13,21 +30,35 @@ function generateFibo(x) {
 function fiboRequest(x) {
     let url = "http://localhost:5050/fibonacci/";
 
-    $.get(
-        url + x, {},
-        function(data) {
-            let y = document.getElementById("Y");
+    $.get(url + x, {})
+        .done(function(data) {
+            loading.style.display = "none";
+
             y.innerText = data.result;
 
-        }
-    );
+        })
+        .fail(
+            function(data) {
+                loading.style.display = "none";
+                y.style.color = "red";
+                y.style.fontWeight = "normal";
+                y.style.textDecoration = "none";
+                y.innerHTML = "Server Error: " + data.responseText;
+
+            }
+        )
 
 }
 
 
 function calculate() {
-    let x = document.getElementById("X").value;
-    x = Number(x);
+    y.style.color = "black";
+    y.innerText = "";
+    y.style.textDecoration = "underline";
+    y.style.fontWeight = "bold";
 
-    fiboRequest(x);
+    loading.style.display = "inline";
+
+    fiboRequest(Number(x.value));
+
 }
