@@ -1,6 +1,8 @@
 let loading = document.getElementById("loading");
+let loading2 = document.getElementById("loading-two");
 let y = document.getElementById("Y");
 let x = document.getElementById("X");
+
 $("#X").change(
     function() {
         let alertMessage = document.getElementById("alert");
@@ -47,9 +49,39 @@ function fiboRequest(x) {
 
             }
         )
-
+    loading2.style.display = "inline";
+    fiboList();
 }
 
+loading2.style.display = "inline";
+
+function fiboList() {
+    let url = "http://localhost:5050/getFibonacciResults";
+    let listGroup = document.getElementById("list-group");
+    listGroup.innerHTML = "";
+
+    $.get(url, {})
+        .done(function(data) {
+            loading2.style.display = "none";
+            console.log(data);
+            for (let item of data.results) {
+                let elem = document.createElement("li")
+                elem.classList.add("list-group-item")
+                elem.innerHTML = `The Fibonnaci Of <strong>${item.number}</strong> is <strong>${item.result}</strong>. Calculated at: ${Date(item.createdDate)}`
+                listGroup.appendChild(elem);
+            }
+
+        })
+        .fail(
+            function(data) {
+                loading2.style.display = "none";
+
+
+            }
+        )
+
+}
+fiboList();
 
 function calculate() {
     y.style.color = "black";

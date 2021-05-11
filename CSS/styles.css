@@ -14,14 +14,9 @@ body {
     align-items: flex-end;
 }
 
-.calc-wrapper {
-    background-color: #fffffb;
-    position: relative;
-    width: 1000px;
-    height: 400px;
-    margin: auto;
-    border-radius: 1%;
-    box-shadow: 6px 0px 18px rgba(255, 255, 255, 0.06);
+.resultsHeader {
+    display: flex;
+    align-items: center;
 }
 
 #X {
@@ -52,6 +47,11 @@ body {
     margin-left: 12px;
 }
 
+#loading-two {
+    display: none;
+    margin-left: 12px;
+}
+
 #alert {
     margin-left: 105px;
     max-width: 180px;
@@ -60,4 +60,20 @@ body {
     color: #A94442;
     display: none;
     margin-top: 5px;
+}
+
+#titleResults {
+    width: 200px;
+}
+
+.list-group-item {
+    font-size: 24px;
+    text-align: center;
+    border-bottom: 1px solid #000000;
+}
+
+.results-container {
+    margin: auto;
+    max-width: 80%;
+    text-align: left;
 }
